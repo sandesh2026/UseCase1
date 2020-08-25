@@ -90,7 +90,7 @@ steps:
     #feedsToUse: 'select'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: 'Sandesh2026/gbj-artifacts'
+    publishVstsFeed: 'GitHub-ADOPipelines/ms-artifacts'
     allowPackageConflicts: true
     #packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     #nuGetFeedType: 'external'
