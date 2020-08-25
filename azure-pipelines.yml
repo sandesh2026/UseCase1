@@ -88,10 +88,10 @@ steps:
   inputs:
     command: 'push'
     #feedsToUse: 'select'
+    #packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    #nuGetFeedType: 'internal'
+    #publishVstsFeed: 'GitHub-ADOPipelines/ms-artifacts'
+    #allowPackageConflicts: true
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
-    nuGetFeedType: 'internal'
-    publishVstsFeed: 'GitHub-ADOPipelines/ms-artifacts'
-    allowPackageConflicts: true
-    #packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    #nuGetFeedType: 'external'
-    #publishFeedCredentials: 'GitHub Packages'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'GitHub Packages'
