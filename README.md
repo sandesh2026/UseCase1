@@ -1,4 +1,4 @@
-# Example Library
+# ADO-GITHUB PIPELINE Library
 
 This is a sample library used for demonstrating a use case of build/release pipeline using Azure DevOps.
 Check out the azure-pipelines.yml file.
