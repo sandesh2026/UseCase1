@@ -82,7 +82,7 @@ steps:
     versionEnvVar: 'PACKAGE_VERSION'
 
 - task: NuGetCommand@2
-  displayName: 'Push to GitHub Packages'
+  displayName: 'Push to Azure Packages'
   condition: and(succeeded(), startsWith(variables['build.sourceBranch'], 'refs/tags/')) # Only run this step when the trigger event is a tag push
   inputs:
     command: 'push'
