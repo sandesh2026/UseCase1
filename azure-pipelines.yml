@@ -82,11 +82,11 @@ steps:
     versioningScheme: 'byEnvVar'
     versionEnvVar: 'PACKAGE_VERSION'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   displayName: 'Push to GitHub Packages'
   condition: and(succeeded(), startsWith(variables['build.sourceBranch'], 'refs/tags/')) # Only run this step when the trigger event is a tag push
   inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'GitHub Packages'
+    command: 'dotnet nuget add source https://nuget.pkg.github.com/GaneshBabu-J/index.json -n github -u GaneshBabu-J -p dbc18817489197fa0e8edb71c298f9d858d2bafc && dotnet nuget push '$(Build.ArtifactStagingDirectory)/*.nupkg' --source "github"'
+    #packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    #nuGetFeedType: 'external'
+    #publishFeedCredentials: 'GitHub Packages'
