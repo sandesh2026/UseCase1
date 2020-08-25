@@ -87,6 +87,11 @@ steps:
   condition: and(succeeded(), startsWith(variables['build.sourceBranch'], 'refs/tags/')) # Only run this step when the trigger event is a tag push
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'GitHub Packages'
+    #feedsToUse: 'select'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'GitHub-ADOPipelines/ms-artifacts'
+    allowPackageConflicts: true
+    #packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    #nuGetFeedType: 'external'
+    #publishFeedCredentials: 'GitHub Packages'
