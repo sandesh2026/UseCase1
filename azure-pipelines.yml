@@ -44,7 +44,7 @@ steps:
   inputs:
     command: 'test'
     projects: 'tests/**/*.csproj'
-    arguments: '--collect "Code coverage"
+    arguments: '--collect "Code coverage"'
 
 
 - task: PowerShell@2
