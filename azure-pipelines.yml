@@ -94,7 +94,7 @@ steps:
     #packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
     #nuGetFeedType: 'external'
     #publishFeedCredentials: 'GitHub Packages'
-- task: NuGetAuthenticate@0
+- task: NuGetAuthenticate@2
   inputs:
     nuGetServiceConnections: 'github'    
 - task: DotNetCoreCLI@2
@@ -104,4 +104,3 @@ steps:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'external'
-    externalEndPoint: 'github'
