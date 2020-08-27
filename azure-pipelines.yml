@@ -99,6 +99,7 @@ steps:
   displayName: 'Push to GitHub Packages'
   condition: and(succeeded(), startsWith(variables['build.sourceBranch'], 'refs/tags/')) # Only run this step when the trigger event is a tag push
   inputs:
-    command: 'push --source "github"'
+    command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'external'
+    externalEndPoint: 'github'
